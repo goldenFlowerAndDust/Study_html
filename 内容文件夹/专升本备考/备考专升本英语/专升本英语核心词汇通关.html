@@ -1633,34 +1633,7 @@
             <span class="toolbar_count">0 个单词</span>
         </div>
 
-        <nav class="suffix_nav" aria-label="词族快速导航">
-            <div class="nav_row">
-                <span class="nav_label">第一批</span>
-                <a class="suffix_link" href="#group_ful">-ful <span>0</span></a>
-                <a class="suffix_link" href="#group_less">-less <span>0</span></a>
-                <a class="suffix_link" href="#group_able">-able <span>0</span></a>
-                <a class="suffix_link" href="#group_tion">-tion <span>0</span></a>
-                <a class="suffix_link" href="#group_sion">-sion <span>0</span></a>
-                <a class="suffix_link" href="#group_ment">-ment <span>0</span></a>
-            </div>
-            <div class="nav_row">
-                <span class="nav_label">第二批</span>
-                <a class="suffix_link" href="#group_ness">-ness <span>0</span></a>
-                <a class="suffix_link" href="#group_ity">-ity <span>0</span></a>
-                <a class="suffix_link" href="#group_ive">-ive <span>0</span></a>
-                <a class="suffix_link" href="#group_ous">-ous <span>0</span></a>
-                <a class="suffix_link" href="#group_un">un- <span>0</span></a>
-                <a class="suffix_link" href="#group_re">re- <span>0</span></a>
-            </div>
-            <div class="nav_row">
-                <span class="nav_label">新词</span>
-                <a class="suffix_link" href="#group_er">-er <span>0</span></a>
-                <a class="suffix_link" href="#group_ing">-ing <span>0</span></a>
-                <a class="suffix_link" href="#group_ess">-ess <span>0</span></a>
-                <a class="suffix_link" href="#group_ly">-ly <span>0</span></a>
-                <a class="suffix_link" href="#group_ster">-ster <span>0</span></a>
-            </div>
-        </nav>
+        <nav class="suffix_nav" id="suffixNav" aria-label="词族快速导航"></nav>
 
     </section>
 
@@ -2260,6 +2233,8 @@
         var groups = document.querySelectorAll('.word_group');
         var words = cards.length;
         var familyCount = groups.length;
+        var nav = document.getElementById('suffixNav');
+        if (nav) nav.style.display = words ? '' : 'none';
         if (!words) return;
 
         var badge = document.querySelector('.hero_badge');
@@ -2305,31 +2280,16 @@
             if (countEl) countEl.textContent = count + ' 个词';
         });
 
-        document.querySelectorAll('.suffix_link').forEach(function (link) {
-            var href = link.getAttribute('href') || '';
-            if (href.charAt(0) !== '#') return;
-            var group = document.getElementById(href.slice(1));
-            if (!group) return;
-            var count = group.querySelectorAll('.word_item').length;
-            var countEl = link.querySelector('span');
-            if (countEl) countEl.textContent = count;
-        });
-
-        var nav = document.querySelector('.suffix_nav');
         if (nav) {
-            var autoRow = nav.querySelector('.nav_row[data-auto="1"]');
-            document.querySelectorAll('.word_group').forEach(function (group) {
-                if (!group.id || nav.querySelector('a[href="#' + group.id + '"]')) return;
-                if (!autoRow) {
-                    autoRow = document.createElement('div');
-                    autoRow.className = 'nav_row';
-                    autoRow.setAttribute('data-auto', '1');
-                    var label = document.createElement('span');
-                    label.className = 'nav_label';
-                    label.textContent = '自动补充';
-                    autoRow.appendChild(label);
-                    nav.appendChild(autoRow);
-                }
+            nav.innerHTML = '';
+            var row = document.createElement('div');
+            row.className = 'nav_row';
+            var label = document.createElement('span');
+            label.className = 'nav_label';
+            label.textContent = '词族';
+            row.appendChild(label);
+            groups.forEach(function (group) {
+                if (!group.id) return;
                 var badge = group.querySelector('.suffix_badge');
                 var suffix = badge ? badge.textContent.trim() : group.dataset.suffix;
                 var count = group.querySelectorAll('.word_item').length;
@@ -2340,8 +2300,9 @@
                 var span = document.createElement('span');
                 span.textContent = count;
                 a.appendChild(span);
-                autoRow.appendChild(a);
+                row.appendChild(a);
             });
+            nav.appendChild(row);
         }
 
         var footerData = document.querySelector('.footer_grid > div:nth-child(2) p');
