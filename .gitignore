@@ -1,0 +1,13 @@
+runtime/
+**/API.txt
+**/口令.txt
+**/云端同步.json
+**/同步状态.json
+**/__pycache__/
+**/*.pyc
+**/_edge_*/
+**/导出记录/
+**/归档日志.jsonl.recover-bak
+**/review_backups/
+**/backups/
+**/数学问答日志备份/

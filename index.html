@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>专升本学习站 · 英语 / 数学</title>
+<style>
+:root{--ink:#17243d;--muted:#64718a;--line:#dfe6f1;--blue:#2f6f9f;--blue2:#4c96c9;--paper:#f6f8fc;--white:#fff;--green:#2e8b70;--shadow:0 18px 50px rgba(24,48,84,.10)}
+*{box-sizing:border-box}body{margin:0;font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;color:var(--ink);background:radial-gradient(circle at 12% 0%,#e8f3ff 0,transparent 38%),radial-gradient(circle at 92% 12%,#eaf8f1 0,transparent 34%),var(--paper)}
+a{color:inherit;text-decoration:none}main{max-width:1180px;margin:0 auto;padding:44px 24px 70px}
+.hero{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.7);background:linear-gradient(125deg,#173c68,#2f6f9f 55%,#3d8fa0);color:#fff;border-radius:30px;padding:46px 46px 40px;box-shadow:var(--shadow)}
+.hero:after{content:"";position:absolute;right:-80px;top:-100px;width:360px;height:360px;border-radius:50%;background:rgba(255,255,255,.11)}
+.hero:before{content:"";position:absolute;right:110px;bottom:-120px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.07)}
+.eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;opacity:.8}.hero h1{font-size:44px;line-height:1.18;margin:14px 0 12px;letter-spacing:-.03em}.hero p{max-width:680px;font-size:16px;line-height:1.9;opacity:.92;margin:0}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;font-weight:700;font-size:14px;border:1px solid rgba(255,255,255,.3)}.btn.primary{background:#fff;color:#1c4a78}.btn.ghost{background:rgba(255,255,255,.1);color:#fff}
+.section-title{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:42px 0 16px}.section-title h2{font-size:25px;margin:0}.section-title span{font-size:13px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.card{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 8px 28px rgba(24,48,84,.05)}.card h3{margin:0 0 8px;font-size:21px}.card p{margin:0;color:var(--muted);font-size:14px;line-height:1.8}.tag{display:inline-block;font-size:12px;font-weight:700;padding:5px 9px;border-radius:999px;background:#eaf4fb;color:#28658f;margin-bottom:14px}.tag.green{background:#e9f6ef;color:#26735e}
+.links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}.link{display:flex;align-items:center;gap:9px;padding:11px 12px;border:1px solid #e8eef7;border-radius:12px;color:#2b4f73;font-size:13.5px;background:#fbfdff}.link:hover{background:#f1f7ff;border-color:#cfe2f4}.dot{width:6px;height:6px;border-radius:50%;background:var(--blue2);flex:none}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.step{background:#f8fbff;border:1px solid #e5edf8;border-radius:14px;padding:15px}.step b{display:block;font-size:13px;color:#2b5d88;margin-bottom:5px}.step span{font-size:12.5px;color:var(--muted);line-height:1.7}
+.notice{margin-top:20px;padding:16px 18px;border-left:4px solid #2e8b70;background:#f2faf6;border-radius:0 12px 12px 0;color:#3d6355;font-size:13.5px;line-height:1.8}
+footer{margin-top:54px;text-align:center;color:#8a96a8;font-size:12px;line-height:1.9}
+@media(max-width:800px){.hero{padding:32px 24px}.hero h1{font-size:32px}.grid,.links,.steps{grid-template-columns:1fr}.section-title{align-items:start;flex-direction:column;gap:5px}}
+</style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <div class="eyebrow">Study Library · 2026</div>
+    <h1>专升本学习站</h1>
+    <p>英语词汇与数学资料集中在一个干净的本地站点。英语从零开始添加单词，生成词卡、搭配复习清单和答疑；数学保留完整内容，只清空旧的 AI 问答记录。</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="内容文件夹/自建本地网站/导航栏内容/专升本/英语/专升本英语.html">进入英语学习</a>
+      <a class="btn ghost" href="内容文件夹/自建本地网站/导航栏内容/专升本/数学/专升本数学.html">进入数学学习</a>
+      <a class="btn ghost" href="内容文件夹/专升本备考/备考专升本英语/使用指南.html">查看使用说明</a>
+    </div>
+  </section>
+
+  <div class="section-title"><h2>快速开始</h2><span>第一次使用 / 日常入口</span></div>
+  <div class="grid">
+    <section class="card">
+      <span class="tag">英语 · 从零开始</span>
+      <h3>添加第一个单词</h3>
+      <p>通过 AI 生成词卡，自动写入核心词汇页和复习清单。首次使用只有空词库，添加后自动进入新词 → 复习 → 打卡循环。</p>
+      <div class="links">
+        <a class="link" href="内容文件夹/专升本备考/备考专升本英语/单词模块/词汇代码生成器.html"><span class="dot"></span>AI 添加单词</a>
+        <a class="link" href="内容文件夹/专升本备考/备考专升本英语/复习清单/核心词汇复习清单.html"><span class="dot"></span>今日复习</a>
+        <a class="link" href="内容文件夹/专升本备考/备考专升本英语/添加日志.html"><span class="dot"></span>添加日志</a>
+        <a class="link" href="内容文件夹/专升本备考/备考专升本英语/英语答疑/英语答疑.html"><span class="dot"></span>英语答疑</a>
+      </div>
+    </section>
+    <section class="card">
+      <span class="tag green">数学 · 完整资料</span>
+      <h3>数学资料与答疑</h3>
+      <p>数学章节、公式、思维导图和工具全部保留；历史问答和归档已清空，打开后可以从第一道题开始重新记录。</p>
+      <div class="links">
+        <a class="link" href="内容文件夹/自建本地网站/导航栏内容/专升本/数学/专升本数学.html"><span class="dot"></span>数学首页</a>
+        <a class="link" href="内容文件夹/专升本备考/备考专升本数学/数学答疑/数学答疑.html"><span class="dot"></span>数学答疑</a>
+        <a class="link" href="内容文件夹/专升本备考/备考专升本数学/一些必备脚本/公式渲染自检.html"><span class="dot"></span>公式速查</a>
+        <a class="link" href="内容文件夹/专升本备考/备考专升本数学/高数公式写法速查表.html"><span class="dot"></span>公式写法</a>
+      </div>
+    </section>
+  </div>
+
+  <div class="section-title"><h2>第一次使用</h2><span>按顺序执行</span></div>
+  <div class="steps">
+    <div class="step"><b>1. 填 API Key</b><span>打开 <code>内容文件夹/专升本备考/共享配置/API.txt</code>，写入自己的 DeepSeek Key。</span></div>
+    <div class="step"><b>2. 启动服务</b><span>双击 <code>启动词素服务.bat</code>；数学需要时再启动数学答疑服务。</span></div>
+    <div class="step"><b>3. 添加并复习</b><span>在生成器添加单词，然后打开复习清单开始打卡。</span></div>
+  </div>
+
+  <div class="notice">云端队列已清空，英语词库为空；第一次添加单词后会正常生成本地词卡、添加日志和复习进度。旧版数学问答历史不再恢复。</div>
+  <footer>本地学习站 · 英语词素 / 数学资料<br>所有数据保存在本机，只有 AI 调用会访问云端。</footer>
+</main>
+</body>
+</html>

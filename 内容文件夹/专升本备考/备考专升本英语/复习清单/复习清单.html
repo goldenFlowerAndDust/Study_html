@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复习打卡</title>
+    <link rel="stylesheet" href="复习打卡.css">
+</head>
+<body>
+<main>
+    <header>
+        <h1>复习打卡</h1>
+    </header>
+    <p class="switch-link"><a href="核心词汇复习清单.html">→ 词汇复习清单（全部分类 · 每天 20 个新词）</a> · <a href="../使用指南.html">使用指南</a></p>
+    <p class="toolbar_note">
+        云端/本地提醒：本地读写需要 8767 服务；云端记录由
+        <code>同步全部科目.bat</code> 拉取。
+        <a href="https://goldenfloweranddust.github.io/my_web/内容文件夹/专升本备考/想要自行搭建并使用的前提——第一步/云端配置.html" target="_blank" rel="noopener">云端部署 / 本地同步前置条件</a>
+    </p>
+    <section id="section_1">
+
+        <div id="status"></div>
+
+        <div class="toolbar">
+            <button id="btn-reload">🔄 重新加载</button>
+            <button id="btn-save">💾 保存</button>
+            <button id="btn-undo">↩ 撤销上一步</button>
+            <button id="btn-undo-all">⏪ 撤销全部</button>
+        </div>
+
+        <h2 id="today-title">今天要复习的</h2>
+        <ul id="due-list" class="review-list"></ul>
+
+        <h2>全部词条</h2>
+        <ul id="all-list" class="review-list"></ul>
+
+    </section>
+</main>
+<script src="复习打卡.js"></script>
+<script src="../返回顶部.js"></script>
+</body>
+</html>
