@@ -273,5 +273,12 @@ def menu() -> None:
             print("没有这个选项。")
 
 
+def ensure_config_files() -> None:
+    """首次运行自动建立空配置；菜单 9 再填实际内容。"""
+    CONFIG_DIR.mkdir(parents=True, exist_ok=True)
+    API_FILE.touch(exist_ok=True)
+
+
 if __name__ == "__main__":
+    ensure_config_files()
     menu()
