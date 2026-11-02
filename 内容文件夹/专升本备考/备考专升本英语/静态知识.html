@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英语静态知识 · 预留入口</title>
+<style>
+:root{--ink:#17243d;--muted:#68758b;--line:#e0e8f3;--blue:#2f6f9f;--paper:#f6f9fd}
+*{box-sizing:border-box}body{margin:0;font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;background:var(--paper);color:var(--ink)}a{text-decoration:none;color:inherit}main{max-width:1000px;margin:0 auto;padding:44px 24px 64px}
+.hero{background:linear-gradient(125deg,#173c68,#2f6f9f 60%,#3f8fa0);color:#fff;border-radius:24px;padding:36px 38px;box-shadow:0 16px 44px rgba(24,48,84,.12)}.hero h1{margin:0 0 10px;font-size:34px}.hero p{margin:0;line-height:1.9;opacity:.92;font-size:14.5px;max-width:720px}
+h2{font-size:21px;margin:32px 0 12px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:18px}.card h3{margin:0 0 6px;font-size:16px}.card p{margin:0;color:var(--muted);font-size:13px;line-height:1.8}.card a{display:inline-block;margin-top:10px;color:var(--blue);font-weight:700;font-size:13px}
+.tip{margin-top:22px;padding:15px 17px;border-left:4px solid #2e8b70;background:#f2faf6;border-radius:0 10px 10px 0;color:#3d6355;font-size:13px;line-height:1.9}
+.back{display:inline-block;margin-bottom:14px;color:var(--muted);font-size:13px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.hero{padding:28px 22px}.hero h1{font-size:28px}}
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="../../自建本地网站/导航栏内容/专升本/英语/专升本英语.html">← 返回英语入口</a>
+  <section class="hero">
+    <h1>英语静态知识</h1>
+    <p>这里预留为英语语法、构词法、长难句和专题笔记的统一入口。目前先把已有的静态页面接进来，后续新增内容直接在这里扩展，不会影响单词生成、添加日志和复习队列。</p>
+  </section>
+
+  <h2>已有静态内容</h2>
+  <div class="grid">
+    <section class="card"><h3>词素分类</h3><p>前缀、后缀、词根和构词法的基础索引。</p><a href="语法体系/词素分类.html">打开词素分类 →</a></section>
+    <section class="card"><h3>构词法总览</h3><p>从词根、前缀、后缀理解单词是怎样组成的。</p><a href="00-总目录/构词法总览.html">打开构词法总览 →</a></section>
+    <section class="card"><h3>长难句拆解</h3><p>句子成分、从句和长难句分析入口。</p><a href="语法模块/长难句拆解.html">打开长难句拆解 →</a></section>
+    <section class="card"><h3>语法体系</h3><p>语法专题总入口，后续静态笔记会继续补充。</p><a href="00-总目录/语法体系.html">打开语法体系 →</a></section>
+  </div>
+
+  <h2>后续扩展接口</h2>
+  <div class="tip">
+    以后新增英语静态知识时，在本目录放 HTML，或在本页加一张卡片即可。<br>
+    单词生成、单复数联动、添加日志、复习清单和 AI 答疑仍按原来的独立功能运行，不受静态知识页面影响。
+  </div>
+</main>
+</body>
+</html>
