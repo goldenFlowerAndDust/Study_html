@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>专升本英语核心词汇通关 · 三批 306 词</title>
-    <meta name="description" content="专升本英语核心词汇三批：17 个词族、306 个真实单词，含中文释义、搭配、例句，以及生词本和艾宾浩斯复习计划。">
+    <title>专升本英语核心词汇通关 · 从零开始</title>
+    <meta name="description" content="专升本英语核心词汇词库：当前为空，添加单词后自动生成词卡、词族和复习计划。">
     <style>
         :root {
             --ink: #2C3E50;
@@ -1546,15 +1546,15 @@
     <!-- ================= 页头 ================= -->
     <header class="hero">
         <div class="hero_top">
-            <span class="hero_badge">三批 · 17 个词族</span>
+            <span class="hero_badge">从零开始 · 自动维护</span>
             <span class="hero_tag">小学 / 初中 / 专升本</span>
         </div>
         <p class="kicker">专升本英语 · 核心词汇</p>
-        <h1>核心词汇通关<span class="accent"> · 306 词</span></h1>
-        <p class="hero_desc">306 个真实单词，按后缀和前缀成组。默认只显示英文；点击单词或“显示”按钮，才出现中文、搭配和例句。把自己新遇到的词加进生词本，自动进入 3 / 5 / 7 / 15 / 30 天复习计划。</p>
+        <h1>核心词汇通关<span class="accent"> · 从零开始</span></h1>
+        <p class="hero_desc">当前词库为空。添加单词后，词卡会按后缀和前缀自动成组；默认只显示英文，点击单词或“显示”按钮才出现中文、搭配和例句。新词自动进入 1 / 3 / 5 / 7 / 15 / 30 天复习计划。</p>
         <div class="hero_stats">
-            <span><b>306</b> 个单词</span>
-            <span><b>17</b> 个词族</span>
+            <span><b>0</b> 个单词</span>
+            <span><b>0</b> 个词族</span>
             <span><b>3</b> 个学段</span>
             <span>单文件 · 可离线运行</span>
         </div>
@@ -1598,7 +1598,7 @@
                 </div>
                 <span class="review_date" id="reviewDate">10月29日 周四</span>
             </div>
-            <p class="review_desc">只统计「我的生词本」中的词；内置 306 词用于系统学习，不占用复习计划。</p>
+            <p class="review_desc">当前词库为空；添加单词后，新词和复习进度会自动开始记录。</p>
             <div class="review_stats">
                 <div><strong id="statTotal">0</strong><span>生词</span></div>
                 <div><strong id="statDue">0</strong><span>待复习</span></div>
@@ -1617,11 +1617,11 @@
     <section class="word_content hide-answer" id="wordContent" aria-labelledby="wordsTitle">
         <div class="content_intro">
             <p class="eyebrow">Batch 01–03 · 17 word families</p>
-            <h2 id="wordsTitle">三批词族：从前后缀看懂词性</h2>
-            <p>共 306 词，17 组，每组 18 词。公式先行，词条随后；所有中文、搭配、例句和笔记默认 <code>display:none</code>，点击英文或“显示”后才展开。</p>
+            <h2 id="wordsTitle">词族：从前后缀看懂词性</h2>
+            <p>当前词库为空。添加单词后，这里会显示词条、词族和中文内容；所有中文、搭配、例句和笔记默认隐藏，点击英文或“显示”后才展开。</p>
             <div class="intro_stats">
-                <span>306 个单词</span>
-                <span>17 个词族</span>
+                <span>0 个单词</span>
+                <span>0 个词族</span>
                 <span>18 词 / 组</span>
                 <span>默认只显示英文</span>
             </div>
@@ -1630,7 +1630,7 @@
         <div class="word_toolbar" id="wordToolbar">
             <button type="button" class="btn btn_primary" id="btnToggleAll" aria-pressed="false">显示全部中文</button>
             <span class="toolbar_tip">点击任意英文单词，或点卡片右侧“显示”，查看该词答案</span>
-            <span class="toolbar_count">306 个单词</span>
+            <span class="toolbar_count">0 个单词</span>
         </div>
 
         <nav class="suffix_nav" aria-label="词族快速导航">
@@ -1653,7 +1653,7 @@
                 <a class="suffix_link" href="#group_re">re- <span>18</span></a>
             </div>
             <div class="nav_row">
-                <span class="nav_label">第三批</span>
+                <span class="nav_label">新词</span>
                 <a class="suffix_link" href="#group_er">-er <span>18</span></a>
                 <a class="suffix_link" href="#group_ing">-ing <span>18</span></a>
                 <a class="suffix_link" href="#group_ess">-ess <span>18</span></a>
@@ -1677,7 +1677,7 @@
             </div>
             <div>
                 <h3>数据说明</h3>
-                <p>三批：17 个词族 × 18 词 = 306 词；每个词都有中文释义、搭配、例句和笔记。生词本和复习进度保存在 localStorage，刷新不丢失。</p>
+                <p>当前词库为空；添加单词后，每个词都会有中文释义、搭配、例句和笔记。生词本和复习进度保存在 localStorage，刷新不丢失。</p>
                 <p><a href="复习清单/核心词汇复习清单.html">→ 词汇复习清单（全部分类 · 每天 20 个新词 + 旧词复习 · 需本地 HTTP）</a></p>
                 <p><a href="使用指南.html">→ 使用指南（第一次先看这个）</a></p>
                 <p><a href="添加日志.html">→ 添加日志（最近自动收录的单词与时间）</a></p>
@@ -1688,7 +1688,7 @@
                 <p>已补齐工作区现有构词法页面的全部后缀；后续可继续 -al、-ic、-hood、-dom 及高频词根。</p>
             </div>
         </div>
-        <p class="footer_bottom">专升本英语核心词汇通关 · 三批 17 个词族（含 -er / -ing / -ess / -ly / -ster）</p>
+        <p class="footer_bottom">专升本英语核心词汇通关 · 从零开始 · 自动维护</p>
     </footer>
 </main>
 
