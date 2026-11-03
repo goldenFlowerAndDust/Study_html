@@ -1,3 +1,4 @@
+# 每日原始历史不提交；GitHub Pages 读取汇总后的 index.json
 history/**/*.jsonl
 !history/index.json
 API.txt
