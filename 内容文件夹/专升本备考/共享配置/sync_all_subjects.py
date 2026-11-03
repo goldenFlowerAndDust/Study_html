@@ -854,6 +854,51 @@ class SyncRunner:
             result["message"] = str(exc)
         return result
 
+    def sync_code(self) -> dict[str, Any]:
+        result: dict[str, Any] = {
+            "id": "programming",
+            "label": "编程 AI",
+            "status": "ok",
+            "exported": 0,
+            "imported": 0,
+            "message": "",
+        }
+        languages = ("python", "javascript", "web", "mysql", "node")
+        root = self.base.parent / "AI答疑" / "编程语言AI" / "history"
+        target = root / "index.json"
+        existing: list[dict[str, Any]] = []
+        if target.exists():
+            try:
+                data = json.loads(target.read_text(encoding="utf-8"))
+                existing = data.get("records") if isinstance(data, dict) else []
+            except (OSError, json.JSONDecodeError):
+                existing = []
+        records = [item for item in existing if isinstance(item, dict)] if isinstance(existing, list) else []
+        seen = {("%s|%s|%s" % (x.get("language"), x.get("time"), x.get("question"))) for x in records}
+        added = 0
+        for language in languages:
+            data = self.api_get("/api/code-log", {"language": language})
+            for item in data.get("entries") or []:
+                if not isinstance(item, dict):
+                    continue
+                key = "%s|%s|%s" % (item.get("language") or language, item.get("time"), item.get("question"))
+                if key in seen:
+                    continue
+                seen.add(key)
+                records.append(item)
+                added += 1
+        records.sort(key=lambda x: str(x.get("time") or ""), reverse=True)
+        root.mkdir(parents=True, exist_ok=True)
+        target.write_text(json.dumps({
+            "generated_at": now_text(),
+            "count": len(records),
+            "records": records,
+        }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        result["exported"] = len(records)
+        result["imported"] = added
+        result["message"] = "新增 %d 条，当前 %d 条。" % (added, len(records))
+        return result
+
     def sync_all(self, interactive: bool = False) -> int:
         self.status = {
             "last_run": now_text(),
@@ -905,6 +950,12 @@ class SyncRunner:
             if review.get("status") not in ("ok", "unchanged"):
                 self.status["errors"].append("云端复习同步失败：" + str(review.get("message") or review.get("status")))
             print("云端复习：%s" % (review["message"] or review["status"]))
+
+        print("")
+        print("=== 编程 AI ===")
+        programming = self.sync_code()
+        self.status["programming"] = programming
+        print("云端 %d 条；%s" % (programming["exported"], programming["message"]))
 
         try:
             self.status["history_archives"] = build_history_archives(self.base)
