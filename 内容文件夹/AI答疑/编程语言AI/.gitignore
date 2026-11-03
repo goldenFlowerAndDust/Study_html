@@ -1,0 +1,5 @@
+history/**/*.jsonl
+!history/index.json
+API.txt
+__pycache__/
+*.pyc
