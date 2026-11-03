@@ -13,7 +13,8 @@ from pathlib import Path
 from typing import Any
 
 TOOL_DIR = Path(__file__).resolve().parent
-BASE = Path(r"E:\Study_html\内容文件夹\专升本备考\备考专升本数学")
+CONTENT_ROOT = Path(__file__).resolve().parents[4]
+BASE = CONTENT_ROOT / "专升本备考" / "备考专升本数学"
 LOG_DIR = TOOL_DIR / "数学问答日志"
 
 API_URL = "https://api.deepseek.com/chat/completions"
